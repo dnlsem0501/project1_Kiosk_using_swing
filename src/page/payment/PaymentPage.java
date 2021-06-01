@@ -238,12 +238,14 @@ public class PaymentPage extends KioskPage{
             	ID=rs.getString("user_ID");
             	System.out.println("아이디확인");
             	PW=rs.getString("user_PW");
-            	DataPWcheck(query,db);
+            	UserStamp=rs.getInt("user_Stamp");
             }
             break;
         }
         //끝까지 돌려서 데이터에 해당핸드폰번호가 없을시
-        if(PhoneNumberResult.getText()!=ID) {
+        if(PhoneNumberResult.getText().equals(ID)) {
+        	DataPWcheck(query,db);
+        }else {
         	//데이터에 자동으로회원가입
         	CreateID(query, db);
         	loadCreditCardPage();

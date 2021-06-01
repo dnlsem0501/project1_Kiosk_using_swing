@@ -52,7 +52,9 @@ public class PayPage extends KioskPage{
 	
 	public PayPage() {
 		super(new PageData.Builder().nextPageType(PageType.COUPON_PAGE).previousPageType(PageType.MENU_PAGE).build());
+		totalquantity=0;
 		initPage();
+		
 //		setNextPage();
 
 		

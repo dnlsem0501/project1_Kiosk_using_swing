@@ -335,6 +335,7 @@ public class CouponPage extends KioskPage{
 				StampUpdate(UserStamp,DB);
 				PrintBill();
 				loadStartPage();
+				totalquantity=0;
 			}
 			
 		}else {

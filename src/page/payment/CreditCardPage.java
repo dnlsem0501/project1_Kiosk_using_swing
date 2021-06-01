@@ -139,7 +139,10 @@ public class CreditCardPage extends KioskPage {
                 } finally {
                     try {
                         CreditCardPage.this.loadNextPage();
-                        StampUpdate(PaymentPage.UserStamp+totalquantity, PaymentPage.ID);
+                        int TN=(PaymentPage.UserStamp)+totalquantity;
+                        StampUpdate(TN, PaymentPage.ID);
+                        totalquantity=0;
+
                     } catch (SQLException exception) {
                         exception.printStackTrace();
                     }
@@ -181,6 +184,7 @@ public class CreditCardPage extends KioskPage {
         return Middle;
     }
     private void StampUpdate(int stamp, String ID) throws SQLException{
+    
         String query1="UPDATE user_info SET user_Stamp="+stamp+" WHERE user_ID='"+ID+"';";
         ConnectDB.statement.executeUpdate(query1);
 	}
