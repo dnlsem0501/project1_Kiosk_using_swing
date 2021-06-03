@@ -32,7 +32,7 @@ public class ConnectDB {
             // SQLite 데이터베이스 파일에 연결
             SQLiteConfig config = new SQLiteConfig();
             // config.setReadOnly(true);
-            String dbFile = ".\\cafe_kiosk.db";
+            String dbFile = "./cafe_kiosk.db";
             connection = DriverManager.getConnection("jdbc:sqlite:" + dbFile, config.toProperties());
             statement = connection.createStatement();
         } catch (Exception e) {
